@@ -1,0 +1,38 @@
+.inputs {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.inputs input {
+  width: inherit;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  color: #333;
+  font-size: 1.2rem;
+  outline: none;
+  margin-bottom: 0.5rem;
+}
+
+.inputs label {
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+}
+
+form {
+  margin-bottom: 2rem;
+}
+.btn-submit {
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-family: Verdana, sans-serif;
+  transition: all 0.3s;
+  font-size: 1.2rem;
+  outline: none;
+  background-color: rgb(250, 86, 86);
+  color: #fff;
+}
+
+.btn-submit:active {
+  transform: scale(0.98);
+}

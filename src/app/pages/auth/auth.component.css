@@ -1,0 +1,11 @@
+.auth-wrapper {
+  /* border: 1px solid #555; */
+  max-width: 25rem;
+  width: 100%;
+  min-height: 25rem;
+  margin: 30px auto;
+  border-radius: 6px;
+  padding: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: rgb(13, 123, 79);
+}

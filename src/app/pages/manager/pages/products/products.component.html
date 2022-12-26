@@ -1,0 +1,44 @@
+<!-- <p>products works!</p> -->
+<div class="end">
+  <button routerLink="/manager/products/create" class="btn btn-add">Add</button>
+</div>
+
+<div>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <!-- <td>{{ product?.id }}</td> -->
+          <td>
+            <img [src]="product.image" width="90px" />
+          </td>
+          <td>{{ product?.name }}</td>
+          <td>{{ product?.price | currency : "USD" }}</td>
+          <td>{{ product?.category?.name }}</td>
+
+          <td class="btn-toolbar">
+            <button
+              class="btn btn-primary"
+              [routerLink]="['/manager/products/edit', product.id]"
+            >
+              Edit
+            </button>
+
+            <button class="btn btn-danger" (click)="deleteItem(product.id)">
+              Remove
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

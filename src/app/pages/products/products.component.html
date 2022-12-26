@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <div class="sidebar">
+    <div class="change-list">
+      <a
+        class="change all"
+        [routerLink]="['/products']"
+        [queryParams]="{ category: '' }"
+        routerLinkActive="active"
+        >All</a
+      >
+      <a
+        *ngFor="let category of categories$ | async"
+        [routerLink]="['/products']"
+        [queryParams]="{ category: category.id }"
+        routerLinkActive="active"
+        class="change"
+        >{{ category.name }}</a
+      >
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <input
+        type="search"
+        class="form-control cl"
+        placeholder="search"
+        [ngModel]="search"
+        (ngModelChange)="searchProduct($event)"
+      />
+    </div>
+    <div class="card">
+      <app-product-card
+        *ngFor="let product of products"
+        [product]="product"
+      ></app-product-card>
+    </div>
+  </div>
+</div>

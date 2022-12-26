@@ -1,0 +1,34 @@
+.banner {
+  width: 100%;
+  height: 20rem;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/003/709/334/original/christmas-big-sale-web-banner-illustration-vector.jpg");
+}
+
+.wrapper {
+  padding: 3rem;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2rem;
+  row-gap: 3rem;
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

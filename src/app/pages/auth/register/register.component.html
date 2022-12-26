@@ -1,0 +1,45 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <p>Please Register!</p>
+  <div class="inputs">
+    <label for="firstName">FirstName</label>
+    <input type="text" id="firstName" formControlName="firstName" />
+    <p *ngIf="form.get('firstName').invalid && form.get('firstName').touched">
+      Please enter firstName!
+    </p>
+  </div>
+
+  <div class="inputs">
+    <label for="lastName">lastName</label>
+    <input type="text" id="lastName" formControlName="lastName" />
+    <p *ngIf="form.get('lastName').invalid && form.get('lastName').touched">
+      Please enter lastName!
+    </p>
+  </div>
+
+  <div class="inputs">
+    <label for="email">Email</label>
+    <input type="email" id="email" formControlName="email" />
+    <p *ngIf="form.get('email').invalid && form.get('email').touched">
+      Please enter valid email!
+    </p>
+  </div>
+  <div class="inputs">
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password" />
+    <p *ngIf="form.get('password').invalid && form.get('password').touched">
+      Please fill password!
+    </p>
+  </div>
+  <div class="inputs">
+    <label for="confirm">ConfirmPassword</label>
+    <input type="password" id="confirm" formControlName="confirmPassword" />
+    <p *ngIf="form.get('password').invalid && form.get('password').touched">
+      Please fill password!
+    </p>
+  </div>
+
+  <button class="btn-submit" type="submit">Submit</button>
+</form>
+<div>
+  <a class="nav-link" routerLink="/auth/login">Login</a>
+</div>

@@ -1,0 +1,46 @@
+<header>
+  <a routerLink="/">
+    <img class="logo" alt="logo" src="/assets/images/logo.png" />
+  </a>
+  <div class="cartSearch">
+    <input
+      type="search"
+      class="search"
+      placeholder="Search"
+      [ngModel]="searchInput"
+      (ngModelChange)="search($event)"
+      [ngModelOptions]="{ standalone: true }"
+    />
+
+    <a routerLink="/cart" class="cart-wrapper">
+      <span> cart</span>
+
+      <div class="cartcount">{{ cartCount$ | async }}</div>
+    </a>
+  </div>
+
+  <ng-template #notAuthenticated>
+    <div class="links">
+      <a routerLink="/auth/login">Sign In</a>
+      <a routerLink="/auth/register">Register</a>
+    </div>
+  </ng-template>
+
+  <ng-container *ngIf="userIsAuthenticated; else notAuthenticated">
+    <div class="drop-pro">
+      <a routerLink="/products" class="nav-link">Products</a>
+      <div class="dropdown">
+        <a (click)="drop.classList.toggle('show')" class="dropbtn">
+          {{ user.email }}
+          <span class="caret"></span>
+        </a>
+        <div #drop id="myDropdown" class="dropdown-content">
+          <a class="nav-link" routerLink="/manager">Content manager</a>
+          <a class="nav-link" routerLink="/orders">Orders</a>
+
+          <a class="nav-link" (click)="logOut()">Logout</a>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</header>

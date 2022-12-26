@@ -1,0 +1,38 @@
+<div class="end">
+  <button routerLink="/manager/categories/create" class="btn btn-add">
+    Add
+  </button>
+</div>
+
+<div>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories">
+          <td>{{ category?.id }}</td>
+          <td>{{ category?.name }}</td>
+
+          <td class="btn-toolbar">
+            <button
+              class="btn btn-primary"
+              [routerLink]="['/manager/categories/edit', category.id]"
+            >
+              Edit
+            </button>
+
+            <button class="btn btn-danger" (click)="deleteItem(category.id)">
+              Remove
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
